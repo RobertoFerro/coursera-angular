@@ -49,6 +49,11 @@ function MenuSearchServiceImplementation($http, ApiBasePath){
           url: (ApiBasePath + "/menu_items.json"),
       }).then(function (result){
           var foundItems = [];
+
+          if(searchTerm === ""){
+            return foundItems
+          }
+
           for(var index = 0; index < result.data.menu_items.length; index++){
               var menuItem = result.data.menu_items[index];
               var menuItemDescripton = menuItem.description;
