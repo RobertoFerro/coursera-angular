@@ -1,0 +1,25 @@
+
+<div class="container-fluid">
+	<form name="signup" novalidate>
+	  
+	  First name: <input type="text" class="form-control" name="firstName" ng-model="signUpCtrl.firstName" required><br>
+	  <p ng-show="signup.firstName.$invalid && signup.firstName.$touched">First name is Required.</p>
+	
+	  Last name: <input type="text" class="form-control" name="lastName" ng-model="signUpCtrl.lastName" required><br>
+	  <p ng-show="signup.lastName.$invalid && signup.lastName.$touched">Last name is Required.</p>
+
+	  Phone Number: <input type="tel" class="form-control" name="phoneNumber" ng-model="signUpCtrl.phoneNumber" required><br>
+	  <p ng-show="signup.phoneNumber.$invalid && signup.phoneNumber.$touched">Phone is Required.</p>
+	  
+	  Email Address: <input type="email" class="form-control" name="emailAddress" ng-model="signUpCtrl.emailAddress" required><br>
+	  <p ng-if="signup.emailAddress.$invalid && signup.emailAddress.$touched">Email is Required</p>
+
+	  Menu Number: <input type="text" class="form-control" name="menuNumber" ng-model="signUpCtrl.menuNumber"><br>
+	  <p ng-if="signUpCtrl.isMenuNumberValid">No such menu number exists</p>
+
+	  <input type="submit" value="Submit" class="btn btn-default" ng-disabled="signup.$invalid" ng-click="signUpCtrl.submit()">
+	  <br>
+	  <p ng-if="signUpCtrl.isUserAdded">Your information has been saved</p>
+
+	</form>
+</div>
